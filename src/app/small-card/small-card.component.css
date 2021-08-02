@@ -1,0 +1,7 @@
+.card:hover {
+  margin: -10px;
+}
+.card:focus {
+  margin: -10px;
+  outline: none !important;
+}

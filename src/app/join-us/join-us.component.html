@@ -1,0 +1,198 @@
+<div class="main">
+  <div class="bg row mx-0">
+    <div class="col-lg-4 mx-auto">
+      <div class="d-lg-block d-none" style="height: 200px"></div>
+
+      <p class="side-text m-4 text-left arabic-dir">
+        {{ "BAZZAR.REACH_NEW" | translate }} ..
+        <br />
+        <small class="small">
+          {{ "BAZZAR.BEST" | translate }}
+        </small>
+      </p>
+    </div>
+    <div class="col-lg-5 mb-5 px-md-5 px-2 mx-lg-auto mx-md-5">
+      <div class="bg-white card rounded mt-5">
+        <h2
+          class="text-center text-secondary font-weight-bold mt-4 mb-4 arabic-dir"
+        >
+          {{ "BAZZAR.JOIN_US_TODAY" | translate }} !
+        </h2>
+        <div class="px-4 px-md-5 contianer">
+          <small-nav></small-nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-5 pt-4 arabic-dir">
+  <div class="text-center">
+    <h1 class="text-center">{{ "BAZZAR.BENIFITS" | translate }}</h1>
+  </div>
+  <div class="row mx-0 mt-5">
+    <div class="col-md-4 text-center mt-5">
+      <img
+        src="../../assets/icons8-personal-growth-50 (1).png"
+        alt=""
+        height="80"
+        width="auto"
+      />
+      <p class="text-22 mt-5">{{ "BAZZAR.ADDITINAL_REVENU" | translate }}</p>
+      <p>{{ "BAZZAR.MORE_ORDERS" | translate }}</p>
+    </div>
+    <div class="col-md-4 text-center mt-5">
+      <img
+        src="../../assets/icons8-attract-customers-80.png"
+        alt=""
+        height="80"
+        width="auto"
+      />
+      <p class="text-22 mt-5">{{ "BAZZAR.NEW_CUSTOMERS" | translate }}</p>
+      <p>{{ "BAZZAR.MORE_VISIBILITY" | translate }}</p>
+    </div>
+    <div class="col-md-4 text-center mt-5">
+      <img
+        src="../../assets/icons8-delivery-64 .png"
+        alt=""
+        height="80"
+        width="auto"
+      />
+      <p class="text-22 mt-5">{{ "BAZZAR.DELIVERY_DONE" | translate }}</p>
+      <p>{{ "BAZZAR.HEADECHS" | translate }}</p>
+    </div>
+  </div>
+</div>
+<div class="px-100"></div>
+<div class="text-center py-5">
+  <img src="../../assets/separator.svg" alt="" />
+</div>
+<div class="bg-light mt-5 arabic-dir">
+  <div class="container mt-5 py-5">
+    <h1 class="text-center mb-5 py-5">
+      {{ "BAZZAR.USING" | translate }}
+    </h1>
+    <div class="row mx-0">
+      <div class="card mx-auto col-md-3 p-0 mt-3">
+        <img
+          class="card-img-top p-0 m-0"
+          src="../../assets/join_us_card1.jpg"
+          height="auto"
+          width="100"
+        />
+        <div class="card-body">
+          <h5 class="text-center h3 mb-4">
+            {{ "BAZZAR.CARD_HEAD1" | translate }}
+          </h5>
+          <p class="h5 text-center">
+            {{ "BAZZAR.CARD_TEXT1" | translate }}
+          </p>
+        </div>
+        <div class="bg-blue p-1"></div>
+      </div>
+      <div class="card mx-auto col-md-3 p-0 mt-3">
+        <img
+          class="card-img-top"
+          src="../../assets/pexels-photomix-company-95916.jpg"
+          alt="Card image cap"
+          height="auto"
+          width="100"
+        />
+        <div class="card-body">
+          <h5 class="text-center h3 mb-4">
+            {{ "BAZZAR.CARD_HEAD2" | translate }}
+          </h5>
+          <p class="h5 text-center">
+            {{ "BAZZAR.CARD_TEXT2" | translate }}
+          </p>
+        </div>
+        <div class="bg-blue p-1"></div>
+      </div>
+      <div class="card mx-auto col-md-3 p-0 mt-3">
+        <img
+          class="card-img-top"
+          src="../../assets/pexels-fauxels-3183197.jpg"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="text-center h3 mb-4">
+            {{ "BAZZAR.CARD_HEAD3" | translate }}
+          </h5>
+          <p class="h5 text-center">
+            {{ "BAZZAR.CARD_TEXT3" | translate }}
+          </p>
+        </div>
+        <div class="bg-blue p-1"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center mt-5 py-5">
+  <img src="../../assets/separator.svg" alt="" />
+</div>
+<div class="container my-5 arabic-dir">
+  <h1 class="text-center my-5 py-5">
+    {{ "BAZZAR.HOW_IT_WORKS" | translate }}
+  </h1>
+  <div class="row mx-auto">
+    <div class="col-md-3 text-center">
+      <img
+        src="../../assets/order_placed-removebg-preview.png"
+        alt=""
+        height="150"
+        width="auto"
+      />
+      <h3 class="mt-4">{{ "BAZZAR.ORDER_PLACED" | translate }}</h3>
+    </div>
+    <div class="col-md-1 text-center center-y">
+      <i
+        *ngIf="appService.lang == 'en'"
+        class="fa fa-angle-right icon-grey"
+        aria-hidden="true"
+      ></i>
+      <i
+        *ngIf="appService.lang == 'ar'"
+        class="fa fa-angle-left icon-grey"
+        aria-hidden="true"
+      ></i>
+    </div>
+    <div class="col-md-4 text-center">
+      <img
+        src="../../assets/prepare_order-removebg-preview.png"
+        alt=""
+        height="150"
+        width="auto"
+      />
+      <h3 class="mt-4">{{ "BAZZAR.PREPARING" | translate }}</h3>
+    </div>
+    <div class="col-md-1 text-center center-y">
+      <i
+        *ngIf="appService.lang == 'en'"
+        class="fa fa-angle-right icon-grey"
+        aria-hidden="true"
+      ></i>
+      <i
+        *ngIf="appService.lang == 'ar'"
+        class="fa fa-angle-left icon-grey"
+        aria-hidden="true"
+      ></i>
+    </div>
+    <div class="col-md-3 text-center">
+      <img
+        src="../../assets/delivery_done-removebg-preview.png"
+        alt=""
+        height="150"
+        width="auto"
+      />
+      <h3 class="mt-4">{{ "BAZZAR.DELIVERED" | translate }}</h3>
+    </div>
+  </div>
+</div>
+<div class="text-center my-5 py-5">
+  <img src="../../assets/separator.svg" alt="" />
+</div>
+<div class="text-center col-md-6 offset-md-3">
+  <h1 class="text-center mb-5">{{ "BAZZAR.READY_TO_JOIN" | translate }}</h1>
+  <button class="btn btn-primary w-50 py-3 h-100 mb-5" (click)="onEdit()">
+    {{ "BAZZAR.JOIN_NOW" | translate }}
+  </button>
+</div>

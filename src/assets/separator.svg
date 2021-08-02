@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="61px" viewBox="0 0 75 61" version="1.1" xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>separator</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.467873936 0.395154437 62.334 0.395154437 62.334 37 0.467873936 37"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="separtor" transform="translate(-214.000000, -2.000000)">
+            <g id="separator" transform="translate(214.000000, 2.000000)">
+                <g id="Group-6">
+                    <path d="M10.6496,38.4047 C7.3166,38.4047 4.0346,36.8477 1.9646,33.9267 C-1.4224,29.1477 -0.3234,22.5407 4.4436,19.1357 C5.4166,18.4407 28.6746,2.0857 62.9736,0.0197 C68.8436,-0.3323 73.8756,4.1327 74.2276,9.9947 C74.5816,15.8567 70.1156,20.8957 64.2536,21.2487 C36.3086,22.9327 16.9656,36.3297 16.7736,36.4647 C14.9116,37.7747 12.7696,38.4047 10.6496,38.4047" id="Fill-1"
+                     fill="#00bcd4"></path>
+                    <g id="Group-5" transform="translate(12.000000, 23.407600)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-4"></g>
+                        <path d="M11.1017,37 C8.1387,37 5.1907,35.762 3.0817,33.349 C-0.7833,28.927 -0.3003,22.183 4.1217,18.317 C4.8137,17.712 21.4157,3.459 50.6097,0.452 C56.4497,-0.15 61.6757,4.098 62.2777,9.94 C62.8787,15.782 58.6307,21.007 52.7897,21.608 C30.6767,23.886 18.1797,34.279 18.0557,34.384 C16.0467,36.14 13.5687,37 11.1017,37" 
+                        id="Fill-3" fill="#00bcd4" mask="url(#mask-2)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

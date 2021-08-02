@@ -1,0 +1,112 @@
+<div class="row border-bottom pb-2 arabic-dir">
+  <h5 class="text-primary text-left col-8">
+    {{ "BAZZAR.ORDER_SUMMARY" | translate }}
+  </h5>
+  <i
+    class="fa fa-times text-dark text-right col-4 pt-1 text-left-ar"
+    (click)="onNoClick()"
+  >
+  </i>
+</div>
+<div class="px-0 mx-0 arabic-dir">
+  <div class="row mx-0 mt-4 text-left font-14px">
+    <div class="col-md-4 col-6 text-left px-0 mx-0 text-dark font-weight-600">
+      {{ "BAZZAR.SHOP" | translate }}
+    </div>
+    <div
+      [ngClass]="{ 'text-md-right': appService.lang === 'ar' }"
+      class="col-md-8 text-right text-md-left col-6 px-0 mx-0"
+    >
+      <span *ngIf="appService.lang == 'en'">Lorem, ipsum.</span>
+      <span *ngIf="appService.lang == 'ar'">نص عشوائي</span>
+    </div>
+  </div>
+  <div class="row mx-0 mt-4 text-left font-14px">
+    <div class="col-md-4 col-6 text-left px-0 mx-0 text-dark font-weight-600">
+      {{ "BAZZAR.ORDER_STATUS" | translate }}
+    </div>
+    <div
+      [ngClass]="{ 'text-md-right': appService.lang === 'ar' }"
+      class="col-md-8 text-right text-md-left col-6 px-0 mx-0"
+    >
+      <span *ngIf="appService.lang == 'en'">delivered</span>
+      <span *ngIf="appService.lang == 'ar'">تم استلامه</span>
+    </div>
+  </div>
+  <div class="row mx-0 mt-4 text-left font-14px">
+    <div class="col-md-4 text-left px-0 mx-0 text-dark font-weight-600 col-6">
+      {{ "BAZZAR.PAYMENT_METHOD" | translate }}
+    </div>
+    <div
+      [ngClass]="{ 'text-md-right': appService.lang === 'ar' }"
+      class="col-md-8 col-md-8 text-right col-6 text-md-left px-0 mx-0"
+    >
+      <img
+        src="../../../assets/cash-icon.svg"
+        height="15"
+        width="auto"
+        alt=""
+      />
+      {{ "BAZZAR.CASH" | translate }}
+    </div>
+  </div>
+  <div class="row mx-0 mt-4 text-left font-14px">
+    <div class="col-md-4 text-left px-0 mx-0 text-dark font-weight-600">
+      {{ "BAZZAR.ADDRESS" | translate }}
+    </div>
+    <div class="col-md-8 text-left px-0 mx-0 mt-2 mt-md-0">
+      jordan , amman , Lorem ipsum dolor sit. <br />
+      Lorem ipsum dolor sit amet consectetur.
+    </div>
+  </div>
+  <div class="row mx-0 mt-4 text-left font-14px">
+    <div class="col-md-4 text-left px-0 mx-0 text-dark font-weight-600">
+      {{ "BAZZAR.SPECAIL_REQUEST" | translate }}
+    </div>
+    <div class="col-md-8 text-left px-0 mx-0 mt-2 mt-md-0">
+      Lorem ipsum dolor sit amet.
+    </div>
+  </div>
+  <div class="bg-light mt-4 border rounded mx-0">
+    <div class="row border-bottom mx-0">
+      <div class="col-6 small font-weight-600 text-left py-2 text-muted">
+        {{ "BAZZAR.ITEMS" | translate }}
+      </div>
+      <div class="col-2 small font-weight-600 text-left py-2 text-muted">
+        {{ "BAZZAR.QTY" | translate }}
+      </div>
+      <div class="col-2 small font-weight-600 text-left py-2 text-muted">
+        {{ "BAZZAR.PRICE" | translate }}
+      </div>
+      <div class="col-2 small font-weight-600 text-left py-2 text-muted">
+        {{ "BAZZAR.TOTAL" | translate }}
+      </div>
+    </div>
+    <div class="row border-bottom mx-0">
+      <div class="col-6 small text-left py-2 text-dark">
+        <span *ngIf="appService.lang == 'ar'">نص عشوائي</span>
+        <span *ngIf="appService.lang == 'en'">Lorem, ipsum.</span>
+        <br />
+        <small>
+          <span *ngIf="appService.lang == 'ar'"
+            >تم توليد هذا النص من مولد النص</span
+          >
+          <span *ngIf="appService.lang == 'en'">Lorem ipsum dolor sit.</span>
+        </small>
+      </div>
+      <div class="col-2 small text-left py-2 text-dark">5</div>
+      <div class="col-2 small text-left py-2 text-dark">11.00</div>
+      <div class="col-2 small text-left py-2 text-dark">55.00</div>
+    </div>
+  </div>
+  <div class="mt-4 mx-0 small">
+    <div class="row mx-0 mt-4">
+      <div class="col-6 text-center font-weight-600 h6">
+        {{ "BAZZAR.TOTAL_AMOUNT" | translate }}
+      </div>
+      <div class="col-6 text-center font-weight-600 h6">
+        55.00 {{ "BAZZAR.JD" | translate }}
+      </div>
+    </div>
+  </div>
+</div>

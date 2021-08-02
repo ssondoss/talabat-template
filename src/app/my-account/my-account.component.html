@@ -1,0 +1,183 @@
+<div class="container px-lg-3 px-0 arabic-dir">
+  <div class="card shadow px-lg-3 mx-0 px-md-2">
+    <div class="card-header mt-4 border-bottom pl-0 pr-0 mx-3 mx-md-0">
+      <div class="row mx-0">
+        <h5 class="card-title text-left mb-0 px-2">
+          {{ "BAZZAR.MY_ACCOUNT" | translate }}
+        </h5>
+        <a
+          class="btn text-success ml-auto-en mr-auto-ar py-0"
+          (click)="openDialogAddAddress()"
+        >
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+          {{ "BAZZAR.ADD_ADDRESS" | translate }}
+        </a>
+      </div>
+    </div>
+
+    <div class="row mx-0">
+      <div class="col-md-3 col-lg-2 px-3 px-md-0">
+        <div
+          class="nav flex-column nav-pills mt-3 border nav_of_account sticky-top"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          <a
+            class="nav-link active py-3 font-14px text-left px-3"
+            id="v-pills-home-tab"
+            data-toggle="pill"
+            href="#v-pills-home"
+            role="tab"
+            aria-controls="v-pills-home"
+            aria-selected="true"
+          >
+            {{ "BAZZAR.ACCOUNT_INFO" | translate }}
+          </a>
+          <a
+            class="nav-link py-3 font-14px text-left px-3"
+            id="v-pills-profile-tab"
+            data-toggle="pill"
+            href="#v-pills-profile"
+            role="tab"
+            aria-controls="v-pills-profile"
+            aria-selected="false"
+          >
+            {{ "BAZZAR.SAVED_ADDRESSES" | translate }}
+          </a>
+          <a
+            class="nav-link py-3 font-14px text-left px-3"
+            id="v-pills-messages-tab"
+            data-toggle="pill"
+            href="#v-pills-messages"
+            role="tab"
+            aria-controls="v-pills-messages"
+            aria-selected="false"
+          >
+            {{ "BAZZAR.MY_ORDERS" | translate }}
+          </a>
+        </div>
+      </div>
+      <div class="col-md-9 col-lg-10 px-0">
+        <div class="tab-content" id="v-pills-tabContent">
+          <div
+            class="tab-pane fade show active my-3"
+            id="v-pills-home"
+            role="tabpanel"
+            aria-labelledby="v-pills-home-tab"
+          >
+            <form class="px-3 pt-4 border mx-3" [formGroup]="accountForm">
+              <div class="form-group row mx-0">
+                <label
+                  class="col-md-4 col-lg-2 small text-muted font-weight-600 text-left px-0"
+                >
+                  {{ "BAZZAR.EMAIL" | translate }}
+                </label>
+                <div class="col-lg-5 col-md-8 px-0">
+                  <input
+                    disabled
+                    type="text"
+                    class="form-control form-control-sm"
+                    id="email"
+                    formControlName="email"
+                  />
+                </div>
+
+                <small
+                  class="mt-3 mt-lg-0 col-lg-3 text-right px-0 text-left-ar"
+                >
+                  <a class="text-success" (click)="openDialogChangePassword()"
+                    >{{ "BAZZAR.CHANGE_PASSWORD" | translate }}
+                  </a></small
+                >
+              </div>
+              <div class="form-group row mx-0">
+                <label
+                  class="col-md-4 col-lg-2 small text-muted font-weight-600 text-left px-0"
+                >
+                  {{ "BAZZAR.MOBILE_NUMBER" | translate }}
+                </label>
+                <div class="col-md-8 col-lg-5 px-0">
+                  <input
+                    pattern="[0-9]+"
+                    required
+                    class="form-control form-control-sm"
+                    maxlength="15"
+                    minlength="10"
+                    formControlName="phone"
+                  />
+                  <mat-error
+                    *ngIf="
+                      accountForm.controls.phone.errors?.required &&
+                      accountForm.controls.phone.touched
+                    "
+                    >{{ "BAZZAR.REQUIRED" | translate }}</mat-error
+                  >
+                  <mat-error
+                    *ngIf="accountForm.controls.phone.hasError('pattern')"
+                  >
+                    {{ "BAZZAR.PHONE_PATTERN" | translate }}
+                  </mat-error>
+                  <mat-error
+                    *ngIf="accountForm.controls.phone.hasError('minlength')"
+                  >
+                    {{ "BAZZAR.PHONE_LENGTH" | translate }}
+                  </mat-error>
+                </div>
+              </div>
+              <div class="form-group row mx-0">
+                <label
+                  class="col-md-4 col-lg-2 small text-muted font-weight-600 text-left px-0"
+                >
+                  {{ "BAZZAR.USERNAME" | translate }}
+                </label>
+                <div class="col-md-8 col-lg-5 px-0">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm"
+                    formControlName="username"
+                    id="username"
+                  />
+                  <mat-error
+                    *ngIf="
+                      accountForm.controls.username.errors?.required &&
+                      accountForm.controls.username.touched
+                    "
+                    >{{ "BAZZAR.REQUIRED" | translate }}</mat-error
+                  >
+                </div>
+              </div>
+
+              <div class="mt-4 mb-4 text-right row mx-0">
+                <div class="col-md-4 col-lg-2"></div>
+                <div class="col-md-8 col-lg-5 text-right px-0">
+                  <button class="btn btn-success w-100">
+                    {{ "BAZZAR.UPDATE" | translate }}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="v-pills-profile"
+            role="tabpanel"
+            aria-labelledby="v-pills-profile-tab"
+          >
+            <app-saved-addresses class="mx-0"></app-saved-addresses>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="v-pills-messages"
+            role="tabpanel"
+            aria-labelledby="v-pills-messages-tab"
+          >
+            <app-my-orders></app-my-orders>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.topnav {
+  background-color: rgba(248, 246, 246, 0);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  font-family: "Open Sans", sans-serif !important;
+  display: block;
+  color: #363535;
+  text-align: center;
+  width: 50%;
+  padding: 14px 0px;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+}
+
+.topnav a:hover {
+  border-bottom: 3px solid #ec4646;
+}
+
+.topnav a.active {
+  border-bottom: 3px solid #ec4646;
+}
+.rounded {
+  border-radius: 13px !important;
+}

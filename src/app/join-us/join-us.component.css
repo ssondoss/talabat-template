@@ -1,0 +1,59 @@
+.main {
+  background-image: url("../../assets/bg-join.jpg");
+  background-size: cover;
+  height: 100%;
+}
+.bg {
+  background-color: rgba(0, 0, 0, 0.747);
+  height: 100%;
+}
+
+::placeholder {
+  font-size: 15px;
+}
+.side-text {
+  font-size: 45px;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif !important;
+  animation: slide 0.9s;
+
+  font-weight: 600;
+}
+.rounded {
+  border-radius: 13px !important;
+}
+.text-container {
+  display: flex;
+}
+
+.small {
+  font-size: 25px !important;
+  line-height: 0rem !important;
+}
+i {
+  font-size: 50px;
+}
+hr {
+  width: 100px;
+  height: 1px;
+  border-top: 2px double #ec4646;
+}
+.icon-grey {
+  color: #bbbbbb60 !important;
+}
+.center-y {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(-90px);
+  }
+  80% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

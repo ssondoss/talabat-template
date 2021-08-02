@@ -1,0 +1,363 @@
+<nav
+  *ngIf="appService.isMobileResolution === false"
+  class="navbar navbar-expand-lg navbar-dark bg-primary pt-2 pb-2 arabic-dir"
+>
+  <div class="container text-left">
+    <a class="navbar-brand logo" routerLink="/"> Logo </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fa fa-bars text-white" aria-hidden="true"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto py-1">
+        <!--<li class="nav-item">
+          <a class="nav-link" routerLink="/">
+            {{ "BAZZAR.HOME" | translate }}
+          </a>
+        </li>-->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">{{ "BAZZAR.HOME" | translate }}</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/all-shops" class="nav-link">
+            {{ "BAZZAR.ALL_SHOPS" | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/join-us">
+            {{ "BAZZAR.BECOME_APARTNER" | translate }}</a
+          >
+        </li>
+
+        <li *ngIf="appService.lang == 'en'" class="nav-item">
+          <a class="nav-link" (click)="appService.changeLanguage()">
+            العربية
+          </a>
+        </li>
+        <li *ngIf="appService.lang == 'ar'" class="nav-item">
+          <a class="nav-link" (click)="appService.changeLanguage()">
+            English
+          </a>
+        </li>
+
+        <li class="nav-item arabic-dir">
+          <a
+            [popoverOnHover]="false"
+            [popover]="myPopoverFlag"
+            class="nav-link"
+          >
+            <img
+              src="../../assets/flag-round-jordan.png"
+              alt=""
+              class="text-left"
+              height="25"
+              width="auto"
+            />
+          </a>
+          <popover-content
+            #myPopoverFlag
+            title="  {{ 'BAZZAR.SELECT_COUNTRY' | translate }}"
+            placement="bottom "
+            [animation]="true"
+            [closeOnClickOutside]="true"
+          >
+            <ul class="no-bullets text-left arabic-dir">
+              <li class="p-2 px-3 arabic-dir">
+                <img
+                  src="../../assets/flag-round-jordan.png"
+                  alt=""
+                  class="text-left mr-2"
+                  height="23"
+                  width="auto"
+                />
+                {{ "BAZZAR.JORDAN" | translate }}
+              </li>
+            </ul>
+          </popover-content>
+        </li>
+
+        <li class="nav-item">
+          <a [popoverOnHover]="false" [popover]="myPopover" class="nav-link">
+            {{ "BAZZAR.MY_ACCOUNT" | translate }}
+          </a>
+          <popover-content
+            #myPopover
+            placement="bottom "
+            [animation]="true"
+            class="arabic-dir"
+            [closeOnClickOutside]="true"
+          >
+            <ul class="no-bullets text-left arabic-dir">
+              <li class="p-3 px-4 arabic-dir" routerLink="/my-account">
+                <img
+                  src="../../assets/icon_myorders.svg"
+                  alt=""
+                  class="text-left mr-3"
+                  height="20"
+                  width="auto"
+                />
+                {{ "BAZZAR.MY_ORDERS" | translate }}
+              </li>
+
+              <li class="p-3 px-4" routerLink="/my-account">
+                <img
+                  src="../../assets/icon_account.svg"
+                  alt=""
+                  class="text-left mr-3"
+                  height="20"
+                  width="auto"
+                />
+                {{ "BAZZAR.ACCOUNT_INFO" | translate }}
+              </li>
+              <li class="p-3 px-4" routerLink="/my-account">
+                <img
+                  src="../../assets/icon_address2.svg"
+                  alt=""
+                  class="text-left mr-3"
+                  height="20"
+                  width="auto"
+                />
+                {{ "BAZZAR.SAVED_ADDRESSES" | translate }}
+              </li>
+              <li class="p-3 px-4" routerLink="/login">
+                <img
+                  src="../../assets/icon_logout2.svg"
+                  alt=""
+                  class="text-left mr-3"
+                  height="20"
+                  width="auto"
+                />
+                {{ "BAZZAR.LOGOUT" | translate }}
+              </li>
+            </ul>
+          </popover-content>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link border-white px-3" routerLink="/login">{{
+            "BAZZAR.LOGIN" | translate
+          }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- mobile navbar -->
+<nav
+  style="margin: 0px; padding: 0px"
+  *ngIf="appService.isMobileResolution === true"
+  class="navbar navbar-dark bg-primary pt-2 px-0 pb-0 my-0 arabic-dir mx-0"
+>
+  <div class="px-0 border-bottom-primary text-left w-100 mx-0">
+    <div class="container">
+      <button
+        class="navbar-toggler mx-2 border-0 mb-2"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fa fa-bars text-white" aria-hidden="true"></i>
+      </button>
+
+      <a class="navbar-brand logo mx-auto pb-2 my-auto" routerLink="/">LOGO</a>
+
+      <a
+        class="ml-0 mr-2 small border-white p-2 mb-2"
+        *ngIf="appService.lang == 'en'"
+        (click)="appService.changeLanguage()"
+        >العربية</a
+      >
+      <a
+        class="ml-0 ml-2 small border-white p-2 mb-2"
+        *ngIf="appService.lang == 'ar'"
+        (click)="appService.changeLanguage()"
+        >english</a
+      >
+    </div>
+    <div
+      class="collapse navbar-collapse bg-white mt-2"
+      id="navbarSupportedContent"
+    >
+      <div
+        class="list-group"
+        style="height: auto; z-index: 99999; position: relative; width: 100%"
+      >
+        <a
+          routerLink="/"
+          class="list-group-item list-group-item-action"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-expanded="false"
+          aria-controls="navbarSupportedContent"
+        >
+          {{ "BAZZAR.HOME" | translate }}
+        </a>
+        <a
+          routerLink="/join-us"
+          class="list-group-item list-group-item-action"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-expanded="false"
+          aria-controls="navbarSupportedContent"
+        >
+          {{ "BAZZAR.BECOME_APARTNER" | translate }}
+        </a>
+        <a
+          routerLink="/all-shops"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-expanded="false"
+          aria-controls="navbarSupportedContent"
+          class="list-group-item list-group-item-action text-dark"
+          ><span class="text-left">
+            {{ "BAZZAR.ALL_SHOPS" | translate }}
+          </span>
+        </a>
+
+        <a
+          class="list-group-item list-group-item-action text-dark"
+          (click)="viewCountries()"
+          ><span class="text-left"> {{ "BAZZAR.COUNTRY" | translate }} </span>
+          <span *ngIf="viewCountriesDiv == false" class="float-right"
+            ><i class="fa fa-chevron-down"></i
+          ></span>
+          <span *ngIf="viewCountriesDiv == true" class="float-right"
+            ><i class="fa fa-chevron-up"></i
+          ></span>
+        </a>
+        <div *ngIf="viewCountriesDiv == true" class="bg-light menu-animation">
+          <a
+            class="list-group-item list-group-item-action border-0 text-dark"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-expanded="false"
+            aria-controls="navbarSupportedContent"
+          >
+            <img
+              src="../../assets/flag-round-jordan.png"
+              alt=""
+              height="25"
+              class="mx-1"
+            />
+            {{ "BAZZAR.JORDAN" | translate }}
+          </a>
+        </div>
+
+        <a
+          class="list-group-item list-group-item-action text-dark"
+          (click)="viewAccount()"
+          ><span class="text-left">
+            {{ "BAZZAR.MY_ACCOUNT" | translate }}
+          </span>
+          <span *ngIf="viewAccountDiv == false" class="float-right"
+            ><i class="fa fa-chevron-down"></i
+          ></span>
+          <span *ngIf="viewAccountDiv == true" class="float-right"
+            ><i class="fa fa-chevron-up"></i
+          ></span>
+        </a>
+        <div *ngIf="viewAccountDiv == true" class="menu-animation text-left">
+          <a
+            routerLink="/my-account"
+            class="list-group-item list-group-item-action"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-expanded="false"
+            aria-controls="navbarSupportedContent"
+          >
+            <img
+              src="../../assets/icon_myorders.svg"
+              alt=""
+              class="text-left mx-3"
+              height="20"
+              width="auto"
+            />{{ "BAZZAR.MY_ORDERS" | translate }}
+          </a>
+          <a
+            routerLink="/my-account"
+            class="list-group-item list-group-item-action"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-expanded="false"
+            aria-controls="navbarSupportedContent"
+          >
+            <img
+              src="../../assets/icon_address2.svg"
+              alt=""
+              class="text-left mx-3"
+              height="20"
+              width="auto"
+            />
+            {{ "BAZZAR.SAVED_ADDRESSES" | translate }}
+          </a>
+          <a
+            routerLink="/my-account"
+            class="list-group-item list-group-item-action"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-expanded="false"
+            aria-controls="navbarSupportedContent"
+          >
+            <img
+              src="../../assets/icon_account.svg"
+              alt=""
+              class="text-left mx-3"
+              height="20"
+              width="auto"
+            />
+            {{ "BAZZAR.ACCOUNT_INFO" | translate }}
+          </a>
+          <a
+            class="list-group-item list-group-item-action text-dark"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-expanded="false"
+            aria-controls="navbarSupportedContent"
+          >
+            <img
+              src="../../assets/icon_logout2.svg"
+              alt=""
+              class="text-left mx-3"
+              height="20"
+              width="auto"
+            />
+            {{ "BAZZAR.LOGOUT" | translate }}
+          </a>
+        </div>
+        <a
+          routerLink="/login"
+          class="list-group-item list-group-item-action"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-expanded="false"
+          aria-controls="navbarSupportedContent"
+        >
+          {{ "BAZZAR.LOGIN" | translate }}
+        </a>
+      </div>
+    </div>
+
+    <!-- Links -->
+  </div>
+</nav>

@@ -1,0 +1,85 @@
+<section style="width: 100%; padding: 0; margin: 0" class="d-none d-lg-block">
+  <div class="bg-red">
+    <div class="row mx-0 px-0">
+      <img
+        src="../../assets/home-talabat2.webp"
+        class="col-3 w-100 mx-0 pl-0 pt-5"
+        height="750"
+        alt="..."
+      />
+      <div class="col-4"></div>
+      <img
+        src="../../assets/home-talabat.webp"
+        class="col-5 w-100 mx-0 px-0"
+        height="750"
+        alt="..."
+      />
+    </div>
+  </div>
+</section>
+
+<div class="form-holder">
+  <form action="#" method="post">
+    <div class="row px-0 text-center">
+      <div class="col-lg-12 px-md-5 px-3">
+        <div class="row px-0">
+          <div class="col-lg-4 p-0">
+            <input
+              type="text"
+              class="form-control search-slt"
+              placeholder="{{ 'BAZZAR.ENTER_MERCHANT_NAME' | translate }} ..."
+              id="name"
+            />
+          </div>
+          <div class="col-lg-3 mt-3 mt-lg-0 p-0">
+            <select class="form-control search-slt">
+              <option value="all">
+                {{ "BAZZAR.ALL_CATEGORIES" | translate }}
+              </option>
+              <option>
+                <span *ngIf="service.lang == 'en'">resturants</span>
+                <span *ngIf="service.lang == 'ar'">مطاعم</span>
+              </option>
+              <option>
+                <span *ngIf="service.lang == 'en'">clothes</span>
+                <span *ngIf="service.lang == 'ar'">ملابس</span>
+              </option>
+              <option>
+                <span *ngIf="service.lang == 'en'">hand made</span>
+                <span *ngIf="service.lang == 'ar'">أعمال يدوية</span>
+              </option>
+            </select>
+          </div>
+          <div class="col-lg-3 mt-3 mt-lg-0 p-0">
+            <select class="form-control search-slt">
+              <option value="all">
+                {{ "BAZZAR.ALL_CITIES" | translate }}
+              </option>
+
+              <option value="irbid">{{ "BAZZAR.IRBID" | translate }}</option>
+              <option value="amman">{{ "BAZZAR.AMMAN" | translate }}</option>
+              <option value="jarash">{{ "BAZZAR.JARASH" | translate }}</option>
+              <option value="ajloon">{{ "BAZZAR.AJLOON" | translate }}</option>
+              <option value="mafraq">{{ "BAZZAR.MAFRAQ" | translate }}</option>
+              <option value="madaba">{{ "BAZZAR.MADABA" | translate }}</option>
+              <option value="zarqa">{{ "BAZZAR.ZARQA" | translate }}</option>
+              <option value="aqaba">{{ "BAZZAR.BALQAA" | translate }}</option>
+
+              <option value="karak">{{ "BAZZAR.KARAK" | translate }}</option>
+              <option value="tafela">{{ "BAZZAR.TAFELA" | translate }}</option>
+              <option value="maan">{{ "BAZZAR.MAAN" | translate }}</option>
+              <option value="aqaba">{{ "BAZZAR.AQABA" | translate }}</option>
+            </select>
+          </div>
+          <div class="col-lg-2 mt-3 mt-lg-0 p-0 w-100">
+            <button type="button" class="btn btn-primary wrn-btn w-100">
+              <i class="fa fa-search text-white px-2"></i>
+              {{ "BAZZAR.SEARCH" | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<hr class="w-25 d-md-none" />

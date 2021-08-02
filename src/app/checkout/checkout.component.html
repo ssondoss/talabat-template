@@ -1,0 +1,375 @@
+<div class="container p-0 arabic-dir">
+  <div class="card shadow p-md-3 p-2 mb-5 bg-white">
+    <div class="border">
+      <div class="row mx-0 py-3 border-bottom">
+        <div class="h5 col-6 text-left my-auto t-media-14">
+          {{ "BAZZAR.ORDER_SUMMARY" | translate }}
+        </div>
+        <div class="col-6 text-right text-left-ar my-auto">
+          <a routerLink="/shop"
+            ><span class="text-success small">
+              {{ "BAZZAR.MODIFY_ORDER" | translate }}
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="px-md-2 px-0">
+        <div class="row mx-0 p-2 mt-2">
+          <span *ngIf="appService.lang == 'en'">Lorem, ipsum.</span>
+          <span *ngIf="appService.lang == 'ar'"
+            >عنوان المتجر باللغة العربية</span
+          >
+        </div>
+        <div class="row mx-0 bg-light py-2 m-0 text-left">
+          <div class="col-6 small">{{ "BAZZAR.ITEMS" | translate }}</div>
+          <div class="col-2 small">{{ "BAZZAR.QTY" | translate }}</div>
+          <div class="col-2 small">{{ "BAZZAR.PRICE" | translate }}</div>
+          <div class="col-2 small">{{ "BAZZAR.TOTAL" | translate }}</div>
+        </div>
+        <div class="row mx-0 py-2 m-0 small pb-2 text-left">
+          <div class="col-6 t-media-12 my-auto">
+            <span *ngIf="appService.lang == 'en'">Lorem, ipsum.</span>
+            <span *ngIf="appService.lang == 'ar'">نص عشوائي</span>
+
+            <p class="text-muted t-media-12">
+              <span *ngIf="appService.lang == 'en'"
+                >Lorem ipsum dolor sit.</span
+              >
+              <span *ngIf="appService.lang == 'ar'"
+                >هذا النص يمكن أن يتم تركيبه على أي تصميم .</span
+              >
+            </p>
+          </div>
+          <div class="col-2 t-media-12 small my-auto text-muted">3</div>
+          <div class="col-2 t-media-12 small my-auto text-muted">4.00</div>
+          <div class="col-2 t-media-12 small my-auto text-muted">55.5</div>
+        </div>
+      </div>
+    </div>
+    <div class="border mt-4">
+      <div class="row mx-0 py-3 border-bottom">
+        <div class="h5 col-6 text-left my-auto t-media-14">
+          {{ "BAZZAR.DELIVERY_ADDRESS" | translate }}
+        </div>
+        <div class="col-6 text-right text-left-ar my-auto">
+          <a class="text-success small" (click)="showDeliveryForm()">
+            <span> {{ "BAZZAR.ADD" | translate }} </span>
+          </a>
+        </div>
+      </div>
+      <div class="px-md-2 px-0">
+        <div class="" *ngIf="showDelForm == false">
+          <div class="row mx-0 my-2">
+            <div class="small col-md-4 my-1 text-left">
+              <span class="font-weight-bold"
+                >{{ "BAZZAR.MOBILE_NUMBER" | translate }} :
+              </span>
+              <span class="text-muted">0799999999</span>
+            </div>
+          </div>
+          <div class="row mx-0 my-2">
+            <div class="small col-md-6 my-1 text-left">
+              <span class="font-weight-bold"
+                >{{ "BAZZAR.COUNTRY" | translate }} :
+              </span>
+              <span class="text-muted">jordan</span>
+            </div>
+            <div class="small col-md-6 my-1 text-left">
+              <span class="font-weight-bold"
+                >{{ "BAZZAR.CITY" | translate }} :
+              </span>
+              <span class="text-muted">Amman</span>
+            </div>
+          </div>
+
+          <div class="row mx-0 my-2">
+            <div class="small col-md-12 my-1 text-left">
+              <span class="font-weight-bold">
+                {{ "BAZZAR.ADDRESS_LINE" | translate }}:
+              </span>
+              <span class="text-muted">Lorem ipsum dolor sit amet.</span>
+            </div>
+          </div>
+
+          <div class="row mx-0 my-2">
+            <div class="small col-md-12 my-1 text-left">
+              <span class="font-weight-bold">
+                {{ "BAZZAR.ADDITIONAL_NOTES" | translate }}:
+              </span>
+              <span class="text-muted">Lorem ipsum dolor sit amet.</span>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="showDelForm == true">
+          <form action="" class="mt-4 px-2" [formGroup]="addressForm">
+            <div class="row mb-2 mx-0">
+              <small class="text-muted">
+                {{ "BAZZAR.CONTACT_DETAILS" | translate }}
+              </small>
+            </div>
+            <div class="row mx-0 text-left">
+              <div class="form-group col-md-6 px-0" dir="ltr">
+                <input
+                  type="text"
+                  ng2TelInput
+                  [ng2TelInputOptions]="{ initialCountry: 'jo' }"
+                  formControlName="phone"
+                  class="form-control"
+                  pattern="[0-9]*"
+                  placeholder="{{ 'BAZZAR.MOBILE_NUMBER1' | translate }}"
+                  required
+                />
+                <br />
+                <mat-error
+                  *ngIf="addressForm.controls.phone.hasError('pattern')"
+                >
+                  {{ "BAZZAR.PHONE_PATTERN" | translate }}
+                </mat-error>
+                <mat-error
+                  *ngIf="addressForm.controls.phone.hasError('minlength')"
+                >
+                  {{ "BAZZAR.PHONE_LENGTH" | translate }}
+                </mat-error>
+                <mat-error
+                  *ngIf="
+                    addressForm.controls.phone.errors?.required &&
+                    addressForm.controls.phone.touched
+                  "
+                >
+                  {{ "BAZZAR.REQUIRED" | translate }}
+                </mat-error>
+              </div>
+            </div>
+            <div class="row mb-2 mt-3 mx-0">
+              <small class="text-muted">
+                {{ "BAZZAR.ADDRESS_DETAILS" | translate }}
+              </small>
+            </div>
+            <div class="row mx-0">
+              <div class="form-group col-md-6 px-0">
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  placeholder="{{ 'BAZZAR.COUNTRY' | translate }}"
+                  formControlName="country"
+                />
+                <mat-error
+                  *ngIf="
+                    addressForm.controls.country.errors?.required &&
+                    addressForm.controls.country.touched
+                  "
+                >
+                  {{ "BAZZAR.REQUIRED" | translate }}
+                </mat-error>
+              </div>
+              <div class="form-group col-md-6">
+                <select
+                  class="form-select form-control"
+                  formControlName="city"
+                  required
+                >
+                  <option selected>
+                    - {{ "BAZZAR.SELECT" | translate }} -
+                  </option>
+                  <option value="irbid">
+                    {{ "BAZZAR.IRBID" | translate }}
+                  </option>
+                  <option value="amman">
+                    {{ "BAZZAR.AMMAN" | translate }}
+                  </option>
+                  <option value="jarash">
+                    {{ "BAZZAR.JARASH" | translate }}
+                  </option>
+                  <option value="ajloon">
+                    {{ "BAZZAR.AJLOON" | translate }}
+                  </option>
+                  <option value="mafraq">
+                    {{ "BAZZAR.MAFRAQ" | translate }}
+                  </option>
+                  <option value="madaba">
+                    {{ "BAZZAR.MADABA" | translate }}
+                  </option>
+                  <option value="zarqa">
+                    {{ "BAZZAR.ZARQA" | translate }}
+                  </option>
+                  <option value="aqaba">
+                    {{ "BAZZAR.BALQAA" | translate }}
+                  </option>
+
+                  <option value="karak">
+                    {{ "BAZZAR.KARAK" | translate }}
+                  </option>
+                  <option value="tafela">
+                    {{ "BAZZAR.TAFELA" | translate }}
+                  </option>
+                  <option value="maan">{{ "BAZZAR.MAAN" | translate }}</option>
+                  <option value="aqaba">
+                    {{ "BAZZAR.AQABA" | translate }}
+                  </option>
+                </select>
+                <mat-error
+                  *ngIf="
+                    addressForm.controls.city.errors?.required &&
+                    addressForm.controls.city.touched
+                  "
+                >
+                  {{ "BAZZAR.REQUIRED" | translate }}
+                </mat-error>
+              </div>
+            </div>
+
+            <div class="row mx-0">
+              <div class="form-group col-md-12 px-0">
+                <input
+                  class="form-control"
+                  required
+                  placeholder="{{ 'BAZZAR.ADDRESS_LINE' | translate }}"
+                  formControlName="addressLineOne"
+                />
+                <mat-error
+                  *ngIf="
+                    addressForm.controls.addressLineOne.errors?.required &&
+                    addressForm.controls.addressLineOne.touched
+                  "
+                >
+                  {{ "BAZZAR.REQUIRED" | translate }}
+                </mat-error>
+              </div>
+            </div>
+            <div class="row mx-0">
+              <div class="form-group col-md-12 px-0">
+                <input
+                  class="form-control"
+                  placeholder="{{ 'BAZZAR.ADDITIONAL_DIRECTIONS' | translate }}"
+                  formControlName="addressLineTwo"
+                />
+              </div>
+            </div>
+          </form>
+
+          <div class="text-center my-4">
+            <button
+              class="btn btn-success mx-1 w-25"
+              (click)="unshowDeliveryForm()"
+            >
+              {{ "BAZZAR.CONFIRM" | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border mt-4">
+      <div class="row mx-0 py-3 border-bottom">
+        <div class="h5 text-left my-auto t-media-14 pl-3 col-6">
+          {{ "BAZZAR.SPECAIL_REQUEST" | translate }}
+        </div>
+        <div class="h5 text-right text-left-ar my-auto text-primary col-6">
+          <i
+            *ngIf="specialRequestForm == false"
+            class="fa fa-chevron-down text-primary"
+            (click)="showSpecialRequestForm()"
+          ></i>
+          <i
+            *ngIf="specialRequestForm == true"
+            class="fa fa-chevron-up text-primary"
+            (click)="unShowSpecialRequestForm()"
+          ></i>
+        </div>
+      </div>
+      <div *ngIf="specialRequestForm == true" class="px-md-2 px-0">
+        <form action="">
+          <div class="row mx-0 my-3">
+            <div class="form-group col-12 my-auto">
+              <textarea
+                id="note"
+                type="text"
+                class="form-control"
+                placeholder="{{ 'BAZZAR.ADD_SPECAIL_REQUEST' | translate }}"
+              ></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="border mt-4">
+      <div class="row mx-0 py-3 border-bottom">
+        <div class="h5 text-left my-auto t-media-14 px-3">
+          {{ "BAZZAR.PAYMENT_SUMMARY" | translate }}
+        </div>
+      </div>
+      <div class="px-md-2 px-0">
+        <form action="">
+          <div class="row mx-0 mt-3">
+            <div class="form-group col-md-4 col-9 my-auto">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="{{ 'BAZZAR.VOUCHER_CODE' | translate }}"
+                id="code-input"
+              />
+            </div>
+            <div class="form-group col-md-2 col-2 mx-0 px-0 my-auto text-left">
+              <Button class="btn btn-outline-success t-media-12 mx-0">
+                {{ "BAZZAR.REDEEM" | translate }}
+              </Button>
+            </div>
+          </div>
+        </form>
+        <hr />
+        <div class="p-2 container col-md-6 offset-md-3 border mb-3">
+          <div class="row mx-0 my-2 font-14px">
+            <div class="col-7 font-weight-bold text-left">
+              {{ "BAZZAR.SUBTOTAL" | translate }}
+            </div>
+            <div class="col-5 text-right text-left-ar">
+              {{ "BAZZAR.JD" | translate }}
+              22.3
+            </div>
+          </div>
+
+          <div class="row mx-0 my-2 font-14px">
+            <div class="col-7 font-weight-bold text-danger text-left">
+              {{ "BAZZAR.COUPON_DISCOUNT" | translate }}
+            </div>
+            <div class="col-5 text-right text-left-ar">
+              {{ "BAZZAR.JD" | translate }}
+              11.00
+            </div>
+          </div>
+          <div class="row mx-0 my-2 font-14px px-0">
+            <div class="col-7 font-weight-bold text-left">
+              {{ "BAZZAR.TOTAL_AMOUNT" | translate }}
+            </div>
+            <div class="col-5 text-right text-left-ar">
+              {{ "BAZZAR.JD" | translate }} 11.30
+            </div>
+          </div>
+          <hr />
+          <div class="row mx-0">
+            <label class="col-lg-4 small font-weight-600 my-auto text-left">
+              {{ "BAZZAR.PAYMENT_METHOD" | translate }}
+            </label>
+            <div class="col-lg-8 text-right text-left-ar mt-3 mt-lg-0">
+              <div>
+                <img
+                  src="../../assets/cash-icon.svg"
+                  alt=""
+                  height="17"
+                  class="mx-2"
+                  width="auto"
+                />
+                {{ "BAZZAR.CASH" | translate }}
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-success w-100 mt-4" routerLink="/">
+            {{ "BAZZAR.PLACE_ORDER" | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

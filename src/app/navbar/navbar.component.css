@@ -1,0 +1,84 @@
+.nav-link {
+  color: #fff !important;
+  margin-left: 13px;
+  margin-right: 13px;
+  font-size: 19px !important;
+  font-family: "Open Sans", sans-serif !important;
+}
+nav {
+  z-index: 99;
+}
+:host::ng-deep popover-content::ng-deep .arrow {
+  left: 45% !important;
+  right: 45% !important;
+}
+.logo {
+  font-weight: 900;
+}
+nav {
+  font-family: "Open Sans", sans-serif !important;
+}
+:host::ng-deep popover-content::ng-deep .popover-header {
+  color: #000 !important;
+
+  font-size: 13px !important;
+  background-color: #00000000;
+}
+:host::ng-deep popover-content::ng-deep .popover-body {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.no-bullets {
+  list-style-type: none;
+}
+.no-bullets li:hover {
+  background-color: #d1cfcf4d;
+  border: none !important;
+  outline: none !important;
+}
+.no-bullets li:focus {
+  background-color: #d1cfcf4d;
+  border: none !important;
+  outline: none !important;
+}
+.no-bullets li:active {
+  background-color: #d1cfcf4d;
+  border: none !important;
+}
+.menu-animation a {
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes rotateMenu {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  70% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+.tags {
+  width: 170px !important;
+  text-align: center !important;
+}
+.tags li:last-child {
+  border-bottom: none !important;
+}
+.tags li {
+  border-bottom: 0.5px solid rgb(223, 220, 220) !important;
+}

@@ -1,0 +1,37 @@
+<div class="border px-3 mx-0 m-3 pt-3 rounded arabic-dir">
+  <div class="row mt-2 mx-0">
+    <label class="col-md-4 col-lg-3 col-form-label text-left font-weight-bold">
+      {{ "BAZZAR.ADDRESS" | translate }}
+    </label>
+    <div class="col-md-8 col-lg-9 text-left">
+      <small class="mt-2"> Jordan , Amman , Lorem ipsum dolor sit amet. </small>
+    </div>
+  </div>
+  <div class="row mt-2 mx-0">
+    <label class="col-md-4 col-lg-3 col-form-label text-left font-weight-bold">
+      {{ "BAZZAR.MOBILE_NUMBER" | translate }}
+    </label>
+    <div class="col-md-8 col-lg-9 text-left">
+      <small class="mt-2">07999999999</small>
+    </div>
+  </div>
+  <div class="row mx-0 mt-2">
+    <label class="col-md-4 col-lg-3 col-form-label text-left font-weight-bold">
+      {{ "BAZZAR.ADDITIONAL_DIRECTIONS" | translate }}
+    </label>
+    <div class="col-md-8 col-lg-9 text-left">
+      <small class="mt-2">
+        Lorem, ipsum dolor sit amet consectetur adipisicing.</small
+      >
+    </div>
+  </div>
+
+  <div class="row mx-0 py-2 text-right">
+    <a
+      class="text-success ml-auto-en mr-auto-ar border-right-0-ar"
+      (click)="openDialogAddAddress()"
+    >
+      {{ "BAZZAR.EDIT" | translate }}
+    </a>
+  </div>
+</div>

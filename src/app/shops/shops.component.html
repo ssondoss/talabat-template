@@ -1,0 +1,152 @@
+<div class="container">
+  <div class="card shadow p-3 mb-5 bg-white">
+    <div class="bg-grey my-3 py-2 px-4 h5 font-weight-bold mx-1 text-left">
+      {{ "BAZZAR.ALL_SHOPS" | translate }}
+    </div>
+
+    <div class="mx-0 my-4">
+      <div class="row px-0 mx-3 text-center justify-content-center">
+        <div class="form-holder">
+          <form action="#" method="post">
+            <div class="row px-0 text-center">
+              <div class="col-lg-12">
+                <div class="row px-0">
+                  <div class="col-lg-4 col-md-3 p-0 search_box">
+                    <input
+                      type="text"
+                      class="form-control search-slt"
+                      placeholder="{{
+                        'BAZZAR.ENTER_MERCHANT_NAME' | translate
+                      }} ..."
+                      id="name"
+                    />
+                  </div>
+                  <div class="col-lg-3 col-md-3 mt-3 mt-md-0 p-0">
+                    <select class="form-control search-slt" id="tag">
+                      <option value="all">
+                        {{ "BAZZAR.ALL_CATEGORIES" | translate }}
+                      </option>
+                      <option>
+                        <span *ngIf="service.lang == 'ar'"> مطاعم </span>
+                        <span *ngIf="service.lang == 'en'"> resturants </span>
+                      </option>
+                      <option>
+                        <span *ngIf="service.lang == 'ar'"> ملابس </span>
+                        <span *ngIf="service.lang == 'en'"> clothes </span>
+                      </option>
+                      <option>
+                        <span *ngIf="service.lang == 'ar'">أعمال يدوية </span>
+                        <span *ngIf="service.lang == 'en'"> handmade </span>
+                      </option>
+                    </select>
+                  </div>
+                  <div class="col-lg-3 col-md-3 mt-3 mt-md-0 p-0">
+                    <select class="form-control search-slt" id="city">
+                      <option value="all">
+                        {{ "BAZZAR.ALL_CITIES" | translate }}
+                      </option>
+
+                      <option value="irbid">
+                        {{ "BAZZAR.IRBID" | translate }}
+                      </option>
+                      <option value="amman">
+                        {{ "BAZZAR.AMMAN" | translate }}
+                      </option>
+                      <option value="jarash">
+                        {{ "BAZZAR.JARASH" | translate }}
+                      </option>
+                      <option value="ajloon">
+                        {{ "BAZZAR.AJLOON" | translate }}
+                      </option>
+                      <option value="mafraq">
+                        {{ "BAZZAR.MAFRAQ" | translate }}
+                      </option>
+                      <option value="madaba">
+                        {{ "BAZZAR.MADABA" | translate }}
+                      </option>
+                      <option value="zarqa">
+                        {{ "BAZZAR.ZARQA" | translate }}
+                      </option>
+                      <option value="karak">
+                        {{ "BAZZAR.KARAK" | translate }}
+                      </option>
+                      <option value="tafela">
+                        {{ "BAZZAR.TAFELA" | translate }}
+                      </option>
+                      <option value="maan">
+                        {{ "BAZZAR.MAAN" | translate }}
+                      </option>
+                      <option value="aqaba">
+                        {{ "BAZZAR.AQABA" | translate }}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="col-lg-2 col-md-3 mt-3 mt-md-0 p-0 w-100">
+                    <button type="button" class="btn btn-primary wrn-btn w-100">
+                      <i class="fa fa-search text-white px-2"></i>
+                      {{ "BAZZAR.SEARCH" | translate }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row card-group mt-2">
+      <div class="col-md-3 mx-auto mb-4">
+        <app-small-card></app-small-card>
+      </div>
+      <div class="col-md-3 mx-auto mb-4">
+        <app-small-card></app-small-card>
+      </div>
+      <div class="col-md-3 mx-auto mb-4">
+        <app-small-card></app-small-card>
+      </div>
+      <div class="col-md-3 mx-auto mb-4">
+        <app-small-card></app-small-card>
+      </div>
+      <div class="col-md-3 mx-auto mb-4">
+        <app-small-card></app-small-card>
+      </div>
+      <div class="col-md-3 mx-auto mb-4">
+        <app-small-card></app-small-card>
+      </div>
+      <div class="col-md-3 mx-auto mb-4">
+        <app-small-card></app-small-card>
+      </div>
+      <div class="col-md-3 mx-auto mb-4">
+        <app-small-card></app-small-card>
+      </div>
+    </div>
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link primary" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+
+        <li class="page-item">
+          <a class="page-link text-dark"> 1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link text-dark"> 2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link text-dark"> 3</a>
+        </li>
+
+        <li class="page-item">
+          <button class="page-link text-muted" aria-label="Next" disabled>
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

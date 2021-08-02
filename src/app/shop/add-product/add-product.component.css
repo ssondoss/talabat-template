@@ -1,0 +1,28 @@
+::placeholder {
+  font-size: 13px !important;
+  color: #53525275;
+  font-weight: 500;
+}
+
+.form-control:focus {
+  border: none !important;
+}
+.form-control::selection {
+  border: none !important;
+}
+.form-control:active {
+  border: none !important;
+}
+
+.form-group {
+  height: 120% !important;
+}
+.form-control {
+  font-weight: 500 !important;
+  height: 50px !important;
+  color: #535252fa;
+}
+button {
+  border: none;
+  outline: none;
+}

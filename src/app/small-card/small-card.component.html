@@ -1,0 +1,24 @@
+<div class="card" routerLink="/shop">
+  <img
+    class="card-img-top"
+    src="../../assets/food.jpg"
+    alt="Card image cap"
+    width="120"
+    height="120"
+  />
+  <div class="card-body pb-1">
+    <h5 class="text-center font-14px font-weight-600">
+      <span *ngIf="appService.lang == 'en'"> Lorem, ipsum.</span>
+      <span *ngIf="appService.lang == 'ar'"> نص عشوائي</span>
+    </h5>
+    <p class="text-center font-14px text-muted font-weight-600">
+      <span *ngIf="appService.lang == 'en'">Lorem ipsum dolor sit.</span>
+      <span *ngIf="appService.lang == 'ar'"
+        >تم توليد هذا النص من مولد النص</span
+      >
+    </p>
+    <p class="text-center font-14px font-weight-600">
+      <span class="text-success">{{ "BAZZAR.OPEN" | translate }} </span>
+    </p>
+  </div>
+</div>

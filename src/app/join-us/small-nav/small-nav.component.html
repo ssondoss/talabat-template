@@ -1,0 +1,331 @@
+<div class="topnav joinUs_nav">
+  <a
+    (click)="showMerchantDetails()"
+    [ngClass]="{ active: showMerchant === true }"
+    >{{ "BAZZAR.ACCOUNT_DETAILS" | translate }}</a
+  >
+  <a (click)="showShopDetails()" [ngClass]="{ active: showShop === true }">
+    {{ "BAZZAR.STORE_DETAILS" | translate }}
+  </a>
+</div>
+<div *ngIf="showMerchant == true">
+  <form class="mt-4" [formGroup]="merchantInfoForm">
+    <div class="form-group mb-4">
+      <label class="t-media-14">
+        {{ "BAZZAR.MOBILE_NUMBER1" | translate }}
+      </label>
+      <input
+        type="tel"
+        formControlName="phone1"
+        class="form-control"
+        pattern="[0-9]*"
+        id="mobileNumber1"
+        maxlength="15"
+      />
+      <mat-error *ngIf="merchantInfoForm.controls.phone1.hasError('pattern')">
+        {{ "BAZZAR.PHONE_PATTERN" | translate }}
+      </mat-error>
+
+      <mat-error
+        *ngIf="
+          merchantInfoForm.controls.phone1.errors?.required &&
+          merchantInfoForm.controls.phone1.touched
+        "
+      >
+        {{ "BAZZAR.REQUIRED" | translate }}
+      </mat-error>
+      <mat-error *ngIf="merchantInfoForm.controls.phone1.hasError('minlength')">
+        {{ "BAZZAR.PHONE_LENGTH" | translate }}
+      </mat-error>
+    </div>
+    <div class="form-group mb-4">
+      <label class="t-media-14">
+        {{ "BAZZAR.MOBILE_NUMBER2" | translate }}</label
+      >
+      <input
+        type="tel"
+        class="form-control"
+        id="mobileNumber2"
+        maxlength="15"
+        pattern="[0-9]*"
+        formControlName="phone2"
+      />
+      <mat-error *ngIf="merchantInfoForm.controls.phone2.hasError('pattern')">
+        {{ "BAZZAR.PHONE_PATTERN" | translate }}
+      </mat-error>
+      <mat-error
+        *ngIf="
+          merchantInfoForm.controls.phone2.errors?.required &&
+          merchantInfoForm.controls.phone2.touched
+        "
+      >
+        {{ "BAZZAR.REQUIRED" | translate }}
+      </mat-error>
+      <mat-error *ngIf="merchantInfoForm.controls.phone2.hasError('minlength')">
+        {{ "BAZZAR.PHONE_LENGTH" | translate }}
+      </mat-error>
+    </div>
+    <div class="form-group mb-4">
+      <label class="t-media-14">{{ "BAZZAR.EMAIL" | translate }}</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        maxlength="150"
+        formControlName="email"
+      />
+      <mat-error
+        *ngIf="
+          merchantInfoForm.controls.email.errors?.required &&
+          merchantInfoForm.controls.email.touched
+        "
+      >
+        {{ "BAZZAR.REQUIRED" | translate }}
+      </mat-error>
+      <mat-error
+        *ngIf="merchantInfoForm.controls.email.hasError('invalidEmail')"
+      >
+        {{ "BAZZAR.EMAIL_PATTERN" | translate }}
+      </mat-error>
+    </div>
+    <div class="form-group mb-4">
+      <label>{{ "BAZZAR.COUNTRY" | translate }}</label>
+      <input
+        type="text"
+        class="form-control"
+        id="country"
+        disabled
+        value="jordan"
+      />
+    </div>
+    <div class="form-group mb-4">
+      <label>{{ "BAZZAR.CITY" | translate }}</label>
+      <select class="form-select form-control" formControlName="city">
+        <option value="irbid">{{ "BAZZAR.IRBID" | translate }}</option>
+        <option value="amman">{{ "BAZZAR.AMMAN" | translate }}</option>
+        <option value="jarash">{{ "BAZZAR.JARASH" | translate }}</option>
+        <option value="ajloon">{{ "BAZZAR.AJLOON" | translate }}</option>
+        <option value="mafraq">{{ "BAZZAR.MAFRAQ" | translate }}</option>
+        <option value="madaba">{{ "BAZZAR.MADABA" | translate }}</option>
+        <option value="zarqa">{{ "BAZZAR.ZARQA" | translate }}</option>
+        <option value="aqaba">{{ "BAZZAR.BALQAA" | translate }}</option>
+
+        <option value="karak">{{ "BAZZAR.KARAK" | translate }}</option>
+        <option value="tafela">{{ "BAZZAR.TAFELA" | translate }}</option>
+        <option value="maan">{{ "BAZZAR.MAAN" | translate }}</option>
+        <option value="aqaba">{{ "BAZZAR.AQABA" | translate }}</option>
+      </select>
+      <mat-error
+        *ngIf="
+          merchantInfoForm.controls.city.errors?.required &&
+          merchantInfoForm.controls.city.touched
+        "
+      >
+        {{ "BAZZAR.REQUIRED" | translate }}
+      </mat-error>
+    </div>
+    <div class="form-group mb-4">
+      <label class="t-media-14">{{ "BAZZAR.PASSWORD" | translate }}</label>
+      <input
+        type="password"
+        class="form-control"
+        maxlength="100"
+        id="password"
+        formControlName="password"
+      />
+      <mat-error
+        *ngIf="
+          merchantInfoForm.controls.password.errors?.required &&
+          merchantInfoForm.controls.password.touched
+        "
+      >
+        {{ "BAZZAR.REQUIRED" | translate }}
+      </mat-error>
+      <mat-error
+        *ngIf="merchantInfoForm.controls.password.hasError('minlength')"
+      >
+        {{ "BAZZAR.PASSWORD_LENGTH" | translate }}
+      </mat-error>
+    </div>
+    <div class="form-group mb-5">
+      <label class="t-media-14">
+        {{ "BAZZAR.CONFIRM_PASSWORD" | translate }}</label
+      >
+      <input
+        type="password"
+        class="form-control"
+        maxlength="100"
+        id="confirmPassword"
+        formControlName="confirmPassword"
+      />
+      <mat-error
+        *ngIf="
+          merchantInfoForm.controls.confirmPassword.errors?.required &&
+          merchantInfoForm.controls.confirmPassword.touched
+        "
+      >
+        {{ "BAZZAR.REQUIRED" | translate }}
+      </mat-error>
+      <mat-error
+        *ngIf="
+          merchantInfoForm.controls.confirmPassword.hasError(
+            'mismatchedPasswords'
+          ) && merchantInfoForm.controls.confirmPassword.touched
+        "
+        >{{ "BAZZAR.DONT_MATCH" | translate }}</mat-error
+      >
+    </div>
+
+    <div class="form-group mb-5 text-center">
+      <button class="btn btn-primary w-100 py-2" (click)="showShopDetails()">
+        {{ "BAZZAR.NEXT" | translate }}
+      </button>
+    </div>
+  </form>
+</div>
+<div *ngIf="showShop == true">
+  <form class="mt-4" [formGroup]="shopDetailsForm">
+    <div class="form-group mb-4">
+      <label>
+        {{ "BAZZAR.STORE_NAME_ENGLISH" | translate }}
+      </label>
+      <input
+        type="text"
+        maxlength="100"
+        required
+        class="form-control"
+        formControlName="nameEnglish"
+        id="nameEnglish"
+      />
+      <mat-error
+        *ngIf="
+          shopDetailsForm.controls.nameEnglish.errors?.required &&
+          shopDetailsForm.controls.nameEnglish.touched
+        "
+      >
+        {{ "BAZZAR.REQUIRED" | translate }}
+      </mat-error>
+    </div>
+    <div class="form-group mb-4">
+      <label>
+        {{ "BAZZAR.STORE_NAME_ARABIC" | translate }}
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        maxlength="100"
+        required
+        id="nameArabic"
+        formControlName="nameArabic"
+      />
+      <mat-error
+        *ngIf="shopDetailsForm.controls.nameArabic.hasError('invalidLetters')"
+      >
+        {{ "BAZZAR.USE_ARABIC_LETTERS" | translate }}
+      </mat-error>
+      <mat-error
+        *ngIf="
+          shopDetailsForm.controls.nameArabic.errors?.required &&
+          shopDetailsForm.controls.nameArabic.touched
+        "
+      >
+        {{ "BAZZAR.REQUIRED" | translate }}
+      </mat-error>
+    </div>
+    <div class="form-group mb-4">
+      <label>
+        {{ "BAZZAR.STORE_DESCRIPTION_ENGLISH" | translate }}
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="desEnglish"
+        formControlName="desEnglish"
+        maxlength="250"
+        required
+      />
+      <mat-error
+        *ngIf="
+          shopDetailsForm.controls.desEnglish.errors?.required &&
+          shopDetailsForm.controls.desEnglish.touched
+        "
+      >
+        {{ "BAZZAR.REQUIRED" | translate }}
+      </mat-error>
+    </div>
+    <div class="form-group mb-4">
+      <label>
+        {{ "BAZZAR.STORE_DESCRIPTION_ARABIC" | translate }}
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="desArabic"
+        maxlength="250"
+        required
+        formControlName="desArabic"
+      />
+      <mat-error
+        *ngIf="shopDetailsForm.controls.desArabic.hasError('invalidLetters')"
+      >
+        {{ "BAZZAR.USE_ARABIC_LETTERS" | translate }}
+      </mat-error>
+      <mat-error
+        *ngIf="
+          shopDetailsForm.controls.desArabic.errors?.required &&
+          shopDetailsForm.controls.desArabic.touched
+        "
+      >
+        {{ "BAZZAR.REQUIRED" | translate }}
+      </mat-error>
+    </div>
+    <div class="form-group mb-4">
+      <label>{{ "BAZZAR.STORE_LOGO" | translate }} </label>
+      <input
+        type="file"
+        class="form-control-file"
+        id="logo"
+        formControlName="logo"
+        required
+      />
+      <mat-error
+        *ngIf="
+          shopDetailsForm.controls.logo.errors?.required &&
+          shopDetailsForm.controls.logo.touched
+        "
+      >
+        {{ "BAZZAR.REQUIRED" | translate }}
+      </mat-error>
+    </div>
+    <div class="form-group mb-5">
+      <label>{{ "BAZZAR.TAG" | translate }}</label>
+      <select class="form-select form-control" formControlName="tag" required>
+        <option>
+          <span *ngIf="service.lang == 'ar'"> مطاعم </span>
+          <span *ngIf="service.lang == 'en'"> resturants </span>
+        </option>
+        <option>
+          <span *ngIf="service.lang == 'ar'"> ملابس </span>
+          <span *ngIf="service.lang == 'en'"> clothes </span>
+        </option>
+        <option>
+          <span *ngIf="service.lang == 'ar'">أعمال يدوية </span>
+          <span *ngIf="service.lang == 'en'"> handmade </span>
+        </option>
+      </select>
+      <mat-error
+        *ngIf="
+          shopDetailsForm.controls.tag.errors?.required &&
+          shopDetailsForm.controls.tag.touched
+        "
+      >
+        {{ "BAZZAR.REQUIRED" | translate }}
+      </mat-error>
+    </div>
+    <div class="form-group mb-5 text-center">
+      <button class="btn btn-primary w-100 py-2" (click)="sendMerchant()">
+        {{ "BAZZAR.SEND" | translate }}
+      </button>
+    </div>
+  </form>
+</div>
